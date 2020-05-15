@@ -1,0 +1,198 @@
+<script id="AsideTpl" type="text/template">
+        <ul>
+            <li data-view-article="principal" >
+                <strong class=""></strong>
+                <div class="rb sprite-901" style="width:100%;height:100%;padding-left: 33px;">
+                    <strong >RunnerBot</strong>
+                    <small >{{msgMision}}</small>
+                </div>
+            </li>
+            <li data-view-article="run" class="selectable">
+            <span class=" icon heart"></span>
+                <strong class="">{{btnTraining}}</strong>
+            </li>
+            <li data-view-article="gameslist" class="selectable">
+            <span class=" icon star"></span>
+                <strong class="">{{btnGames}}</strong>
+            </li>
+            <li data-view-article="historylist" class="selectable">
+            <span class=" icon calendar"></span>
+                <strong class="">{{btnHistory}}</strong>
+            </li>
+            <li data-view-article="configlist"  class="selectable">
+            <span class=" icon cogs"></span>
+                <strong class="">{{btnConfig}}</strong>
+            </li>
+            <li data-view-article="register" class="selectable">
+            <span class=" icon user"></span>
+                <strong class="">{{btnProfile}}</strong>
+            </li>
+            <li data-view-article="share-list" class="selectable">
+            <span class=" icon comment-alt"></span>
+                <strong class="">{{btnShare}}</strong>
+            </li>
+        </ul>
+    </script>
+<script id="TrainningTpl" type="text/template">
+<ul >
+<li>   
+<a class="button margin-top secondary"  id="Runstartbtn">{{btnStart}}</a>
+<a class="button margin-top theme"  id="Runpausebtn">{{btnPause}}</a>
+<a class="button margin-top color"  id="Runstopbtn">{{btnStop}}</a>
+</li>
+<li>
+
+<a data-view-article="gameslist" style="height:40px"> 
+<span class="fleft s24 {{GameClass}}"></span> 
+<strong class="fleft">{{GameName}}</strong>
+<small class="tap red fright" >{{btnChange}}</small>
+<small class="fleft cleft">{{GameSubtitle}}</small>
+</a>
+</li>
+<li class="liHigh">   
+<strong class="fleft strMessures">{{lblTime}}:</strong>
+<a class="messures" id="txtTime"></a>
+</li>
+<li class="liHigh">   
+<strong class="fleft strMessures">{{lblDistance}}:</strong>
+<span class="icon play-circle frightI" id="btnSound"></span>
+<a class="messures" id="txtDistance"></a>
+</li>
+<li class="liHigh">   
+<strong class="fleft strMessures">{{lblSpeedPartial}}:</strong>
+<a class="messures" id="txtSpeedPartial"></a></span>
+</li>
+<li class="liHigh">   
+<strong class="fleft strMessures">{{lblSpeed}}:</strong>
+<a class="messures" id="txtSpeedGlobal"></a></span>
+</li>
+<li class="liHigh">   
+<strong class="fleft strMessures">{{lblCalories}}:</strong>
+<a class="messures" id="txtCalories"></a>
+</li>
+</ul>
+<div id="ulGameInfo" class="list scroll" style="height:150px"></div>
+</script>
+<script id="HistoryIdTpl" type="text/template">
+<div id='dvhistory' >
+<strong>{{DateTime}} - {{Name}}</strong>
+<span class="fleft s24 {{Image}}"></span>
+    <div>
+      <span class="fleft icon globe"></span>
+      <small class="fleft">{{Distance}} km</small>
+      <small class="fleft"> - {{TimeTotal}}</small>
+      <span class="fleft icon time"></span>
+  </div>
+<a id='btnPlayGameHist' class='big button secondary'>{{btnPlay}}</a>
+<a id='btnHistoryBack' class='big button theme'>{{btnHistory}}</a>
+<a id='btnHistoryDelete' class='big button color'></span>{{btnDelete}}</a>
+
+<div id="mapholder" style="width: 100%; height: 200px"></div>
+
+<ul id="dvSummaryHistory"></ul>
+
+</div>
+</script>
+<script id="HistoryListTpl" type="text/template">
+{{#data}}
+<li class='arrow selectable' id='{{Id}}' style="height:70px;">
+<span class="fleft s24 {{Image}}"></span>
+<div  class="fleft"> 
+    <strong>{{DateTime}} - {{Name}}</strong>
+    <div>
+      <span class="icon globe"></span>
+      <small class="fleft">{{Distance}} km</small>
+      <small class="fleft"> - {{TimeTotal}}</small>
+      <span class="fleft icon time"></span>
+  </div>
+</div>
+</li>
+{{/data}}
+</script>
+<script id="GamesIdTpl" type="text/template">
+<div id='dvgame'>
+<div class="fleft">
+    <strong class="fleft cleft title">{{Name}}</strong>
+    <small class="fleft cleft">{{Subtitle}}</small>
+    <small class="fleft cleft titleSect">{{lblDifficulty}}: </small>
+    <small class="fleft">{{Difficulty}}</small>
+    <small class="fleft cleft titleSect">{{lblRgPoints}}:</small>
+    <small class="fleft">{{Points}}</small>
+</div>
+<span class="fright s96 {{Image}}"></span>
+<span class="fleft cboth titleSect">{{lblDescription}}</span>
+<p class="cboth">{{Description}}</p>
+<ul class="list indented">
+<li><a id='{{Id}}' class='selectGame button secondary' >{{btnPlay}}</a></li>
+<li><a class='chooseGames button theme'>{{btnGames}}</a></li>
+</ul>
+</div>
+</script>
+<script id="GamesListTpl" type="text/template">
+{{#data}}
+<li class='arrow selectable' id='{{Id}}'>
+<strong>{{Name}}</strong>
+<small>{{Subtitle}}</small>
+</li>
+{{/data}}
+</script>
+<script id="RegisterTpl" type="text/template">
+<ul class="list">
+    <li>   
+        <a class="button margin-top secondary" id='btnSaveProfile' data-label="{{btnSave}}">{{btnSave}}</a>
+    </li>
+</ul>
+<form>
+    <strong class="title">{{lblRgName}}</strong>
+    <input id="regUsername" type="text" placeholder="{{lblRgName}}" value="" class="round" required>
+    <strong class="title">{{lblRgSurnames}}</strong>
+    <input id="regFirstName" type="text" placeholder="{{lblRgSurnames}}" class="round">
+    <strong class="title">{{lblRgWeight}}</strong>
+    <input id="regPeso" type="number" placeholder="{{lblRgWeight}}" value="" class="round">
+    <strong class="title">{{lblRgEmail}}</strong>
+    <input id="regEmail" type="email" placeholder="{{lblRgEmail}}" value="" class="round">
+    <strong class="title">{{lblRgAge}}</strong>
+    <input id="regAge" type="number" placeholder="{{lblRgAge}}" value="" class="round">
+    <strong class="title">{{lblRgGender}}</strong>
+    <select id="regGenero" >
+        <option value="M">{{lblRgGenderMan}}</option>
+        <option value="W">{{lblRgGenderWoman}}</option>
+    </select>
+    <strong class="title">{{lblRgRol}}</strong>
+    <select id="regRol" >
+        <option value="0">{{lblRgRolInit}}</option>
+        <option value="1">{{lblRgRolAdvance}}</option>
+        <option value="2">{{lblRgRolPro}}</option>
+    </select>
+    <strong class="title">{{lblRgPoints}}</strong><span class="fright icon heart"></span>
+    <div id="regPoints" class="round"></div>
+    <strong  class="title">{{lblRgPointsEarned}}</strong><span class="fright icon trophy"></span>
+    <div id="regPointsWin" class="round"></div>
+    <strong  class="title">{{lblRgPointsLose}}</strong><span class="fright icon heart-empty"></span>
+    <div id="regPointsLose" class="round"></div>
+</form>
+
+</script>
+<script id="FooterTpl" type="text/template">
+<nav>
+<a href="#" data-view-section='terms'>{{lblTerm}}</a>
+</nav>
+</script>
+<script id="PrincipalTpl" type="text/template">
+<ul>
+<li class='centerCont'>
+<a class='button theme' data-view-article='register' data-label='{{btnCreateProfile}}'>{{btnCreateProfile}}</a>
+</li>
+<li>
+<strong class='text bold'>{{lblTitleIntro}}</strong>
+<span class='text tiny'>{{lblDescIntro}}</span>
+</li>
+<li>
+<strong class='text bold'>{{lblTitleProfileIntro}}</strong>
+<span class='text tiny'>{{lblDescProfileIntro}}</span>
+</li>
+<li>
+<a class='button margin-top secondary' data-view-article='run' data-label='{{btnTraining}}' id='test'>{{btnTraining}}</a>
+</li>
+</ul>
+</script>

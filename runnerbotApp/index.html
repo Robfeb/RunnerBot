@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>RUNNERBOT</title>
+    <meta name="description" content="Running App for TFC UOC">
+    <meta name="author" content="Roberto Febrer González">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="components/lungo/lungo.css">
+    <link rel="stylesheet" href="components/lungo/lungo.theme.css">
+    <link rel="stylesheet" href="components/lungo/lungo.icon.css">
+    <link rel="stylesheet" href="components/lungo/lungo.icon.brand.css">
+    <!-- App Stylesheet -->
+    <link rel="stylesheet" href="static/stylesheets/app.css">
+</head>
+
+<body class="theme">
+
+   <section id="main" data-aside="menuoptions" data-transition="slide" class="drag">
+    <header> <span class="title centered">{{Title}}</span>
+        <nav class="left box">
+            <a href="#" data-view-aside="menuoptions"  class="icon menu" ></a>
+        </nav>
+        <!--<nav class="left box">
+            <a href="#" data-view-article="back"  class="icon arrow-left" ></a>
+        </nav>-->
+        <nav class="on-right">
+            <a href="#" data-view-article='register' class="rb sprite-901"></a>
+        </nav>
+    </header>
+    <article id="principal" class="list indented scroll"></article>
+    <article id="configlist" class="indented scroll"></article>
+    <article id="gameslist" class=" indented scroll">
+       <ul class='list' id='gameslistul'></ul>
+   </article>
+   <article id="gamesId" class="indented scroll"></article>
+   <article id="historylist" class=" indented scroll">
+    <ul class='list' id='ulhistorylist'></ul>
+    </article>
+    <article id="historyId" class="indented scroll"></article>
+    <article id="register" class=" indented scroll"></article>
+    <article id="run" class=" list indented scroll"></article>
+    <article id="share-list" class=" indented list scroll" data-transition="slide" >
+     <ul>
+        <li >
+            <a class="button theme"  href="https://twitter.com/intent/tweet?text=&via=runnerbot&url=http%3A%2F%2Frunnerbot.blogspot.com.es" target="_blank"  data-label="Twitter" class="icon brand twitter-2"></a>
+        </li>
+        <li >
+            <a class="button secondary" class="icon brand facebook-2" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Frunnerbot.blogspot.com.es" data-label="Facebook"></a>
+        </li>
+        <li >
+            <a class="button color" class="icon brand google-plus-2" href="https://plus.google.com/share?url=http%3A%2F%2Frunnerbot.blogspot.com.es" target="_blank" data-label="Google +"></a>
+        </li>
+    </ul>
+    </article>
+</section>
+
+<!-- Lungo dependencies -->
+<script src="components/quojs/quo.js"></script>
+<script src="components/lungo/lungo.js"></script>
+<script src="components/mustache/mustache.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBodjSApaq3YaDKOxPVwqBzWxiohFB3PjE&sensor=false"></script>
+<!--<script src="cordova.js"></script>-->
+
+<script>
+Lungo.init({
+    name: 'RUNNERBOT',
+    version: '1.0',
+    resources: [
+    'static/asides/aside.html',
+    'static/sections/templates.html'
+    ]
+});
+</script>
+<!--<script src="static/javascripts/tts.js"></script>-->
+<script src="static/javascripts/phonegapfn.js"></script>
+<script src="static/javascripts/language.js"></script>
+<script src="static/javascripts/database.js"></script>
+<script src="static/javascripts/geolocalization.js"></script>
+<script src="static/javascripts/app.js"></script>
+
+</body>
+</html>

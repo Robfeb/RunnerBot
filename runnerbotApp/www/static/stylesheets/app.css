@@ -1,0 +1,33 @@
+.fleft{float:left;}
+.fright{float:right;}
+.frightI{float:right !important;}
+.cleft{clear:left;}
+.cright{clear:right;}
+.cboth{clear:both;}
+.txtComment{width:100%;height:100px;}
+.console {background: #292f34;color: white;font-size: 1.0em;text-align: center;}
+li {padding-top: 128px !important;padding-bottom: 128px !important;}
+#touchevents .list li:not(.anchor) {padding: 64px 8px;}
+#scroll h1 {line-height: 44px; background: black; color: white; text-indent: 10px;}
+#scroll img {min-width: 256px;min-height: 128px; background: #333;}
+#scroll .anchor img {width: 100%;margin-bottom: 4px;}
+#scroll .horizontal img {height: 100%; margin-right: 4px;}
+.centerCont {margin: 0 auto;text-align: center;}
+.dnone{display:none;}
+.messures{font-weight:bold;}
+.strMessures{margin-right:10px;}
+.liHigh{height:40px;}
+.s96{width:96px;height: 96px}
+.s96.Free {background: url('../images/96/Free.png') no-repeat top left;}
+.s96.Shadow {background: url('../images/96/Shadow.png') no-repeat top left;}
+.s96.Virus {background: url('../images/96/Virus.png') no-repeat top left;}
+.s96.Zoo {background: url('../images/96/Zoo.png') no-repeat top left;}
+.s96.Rip {background: url('../images/96/Rip.png') no-repeat top left;}
+.s24{width:24px;height: 24px;}
+.s24.Free {background: url('../images/24/Free.png') no-repeat top left;}
+.s24.Shadow {background: url('../images/24/Shadow.png') no-repeat top left;}
+.s24.Virus {background: url('../images/24/Virus.png') no-repeat top left;}
+.s24.Zoo {background: url('../images/24/Zoo.png') no-repeat top left;}
+.s24.Rip {background: url('../images/24/Rip.png') no-repeat top left;}
+.title{font-weight: bold;color:#003366;font-size: 12pt;}
+.titleSect{font-weight: bold;color:#003366;font-size: 12pt;}
