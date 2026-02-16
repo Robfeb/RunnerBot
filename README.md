@@ -50,7 +50,8 @@ RunnerBot is a gamified running and training tracking mobile application for And
 RunnerBot/
 ├── README.md                    # Project documentation
 ├── LICENSE                      # Project license
-├── rfebrerTFC0114*             # Academic papers and presentations
+├── rfebrerTFC0114memoria.pdf   # Project report (memoria)
+├── rfebrerTFC0114presentació.pdf  # Project presentation
 └── runnerbotApp/               # Main application directory
     ├── config.xml              # PhoneGap/Cordova configuration
     ├── index.html              # Application entry point
